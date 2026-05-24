@@ -250,7 +250,7 @@ Response time: ${elapsed}ms (${elapsed < 1500 ? "very fast" : elapsed < 4000 ? "
 
 Analyze this Yes/No response for deception. Consider the response time as a behavioral signal — very fast YES/NO can indicate rehearsed answers, while delays can indicate cognitive load from constructing a lie.`;
 
-      const GEMINI_KEY = "AIzaSyDWxvN9w8XLViBq5kHnw2EM_kt3Be7J9U4";
+      const GEMINI_KEY = import.meta.env.VITE_GEMINI_KEY;
       const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
